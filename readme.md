@@ -1,6 +1,6 @@
 ## Exploring ELF format
 
-Was curious about what exactly our executables contain and why it is not just
+I was curious about what exactly our executables contain and why it is not just
 an executable code itself, but a bit complex, well designed format.
 
 I think explaining every single line in my code with comments would be rather
