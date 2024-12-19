@@ -1,7 +1,7 @@
 ## Exploring ELF format
 
 I was curious about what exactly our executables contain and why it is not just
-an executable code itself, but a bit complex, well designed format.
+an executable code itself, but complex, well designed format.
 
 I think explaining every single line in my code with comments would be rather
 distracting than useful. You can just look at raw bytes and not to dive into
