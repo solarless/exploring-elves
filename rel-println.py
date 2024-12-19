@@ -470,8 +470,7 @@ def main() -> None:
     contents[0x0116] = 0x6e
     contents[0x0117] = 0x00
 
-
-    # >>>>>>>> RELOCATION ENTRIES <<<<<<<<
+    # >>>>>>>> ".text" SECTION RELOCATION ENTRIES <<<<<<<<
 
     # 0x0020: .rodata - 0x04
 
