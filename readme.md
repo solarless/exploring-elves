@@ -19,7 +19,7 @@ and `objdump` outputs.
 
 ### `exec-tiny.py`
 
-Smallest possible ([excluding ways in which internal structures overlap](https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html))
+Smallest possible ([excluding ways in which some structures overlap](https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html))
 executable that just does exit(0).
 
 ### `exec-hello-world.py`
