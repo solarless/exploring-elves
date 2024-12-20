@@ -12,8 +12,8 @@ relocatable. To build relocatable objects at once you can use `build-rel.sh`
 script.
 
 It was not intended to be well-written x86 assembly programs, consider
-it as necessary payload so we can see the result, besides looking at `readelf`
-and `objdump` outputs.
+them as inevitable payload so we can see the result, besides looking at
+`readelf` and `objdump` output.
 
 ## Files
 
