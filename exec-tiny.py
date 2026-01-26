@@ -6,7 +6,7 @@ def main() -> None:
 
     # >>>>>>>> ELF HEADER <<<<<<<<
 
-    # e_ident[EI_MAG0..=EI_MAG3]
+    # e_ident[EI_MAG0..EI_MAG3]
     contents[0x00] = 0x7f
     contents[0x01] = 0x45
     contents[0x02] = 0x4c
