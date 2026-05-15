@@ -17,20 +17,20 @@ them as inevitable payload so we can see the result, besides looking at
 
 ## Files
 
-### `exec-tiny.py`
+### `exec/tiny.py`
 
 Smallest possible ([excluding ways in which some structures overlap](https://www.muppetlabs.com/~breadbox/software/tiny/teensy.html))
 executable that just does exit(0).
 
-### `exec-hello-world.py`
+### `exec/hello-world.py`
 
 Simple yet complete hello world program.
 
-### `rel-*.py`
+### `rel/`
 
 Relocatable objects that should be linked together by the linker. Here
-`rel-swap-n-print` uses functions `swapcase` from `rel-swapcase` and `println`
-from `rel-println`. It prints a string, swaps the letter case in it and prints it
+`swap-n-print.py` uses functions `swapcase` from `swapcase.py` and `println`
+from `println.py`. It prints a string, swaps the letter case in it and prints it
 again.
 
 ## Useful links
