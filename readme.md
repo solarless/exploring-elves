@@ -4,8 +4,7 @@ I was curious about what exactly our executables contain and why it is not just
 an executable code itself, but complex, well designed format.
 
 Each python script creates an ELF object byte-by-byte, either executable or
-relocatable. To build relocatable objects at once you can use `build-rel.sh`
-script.
+relocatable. To build them all at once you can use `build.sh` script.
 
 It was not intended to be well-written x86 assembly programs, consider
 them as inevitable payload so we can see the result, besides looking at
