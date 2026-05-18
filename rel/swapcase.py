@@ -2,22 +2,22 @@ contents = bytearray(0x0200)
 
 # >>>>>>>> ELF HEADER <<<<<<<<
 
-# e_ident[EI_MAG0..EI_MAG3]
+# e_ident[EI_MAG0..EI_MAG3] = ELFMAG
 contents[0x0000] = 0x7f
 contents[0x0001] = 0x45
 contents[0x0002] = 0x4c
 contents[0x0003] = 0x46
 
-# e_ident[EI_CLASS]
+# e_ident[EI_CLASS] = ELFCLASS64
 contents[0x0004] = 0x02
 
-# e_ident[EI_DATA]
+# e_ident[EI_DATA] = ELFDATA2LSB
 contents[0x0005] = 0x01
 
-# e_ident[EI_VERSION]
+# e_ident[EI_VERSION] = EV_CURRENT
 contents[0x0006] = 0x01
 
-# e_ident[EI_OSABI]
+# e_ident[EI_OSABI] = ELFOSABI_NONE
 contents[0x0007] = 0x00
 
 # e_ident[EI_ABIVERSION]
@@ -32,15 +32,15 @@ contents[0x000d] = 0x00
 contents[0x000e] = 0x00
 contents[0x000f] = 0x00
 
-# e_type
+# e_type = ET_REL
 contents[0x0010] = 0x01
 contents[0x0011] = 0x00
 
-# e_machine
+# e_machine = EM_X86_64
 contents[0x0012] = 0x3e
 contents[0x0013] = 0x00
 
-# e_version
+# e_version = EV_CURRENT
 contents[0x0014] = 0x01
 contents[0x0015] = 0x00
 contents[0x0016] = 0x00
@@ -102,7 +102,7 @@ contents[0x003b] = 0x00
 contents[0x003c] = 0x05
 contents[0x003d] = 0x00
 
-# e_shstrndx
+# e_shstrndx = .shstrtab
 contents[0x003e] = 0x04
 contents[0x003f] = 0x00
 
@@ -183,21 +183,19 @@ contents[0x005f] = 0xc3
 
 # >>>>>>>> SYMBOL TABLE <<<<<<<<
 
-# Null
-
 # st_name
 contents[0x0060] = 0x00
 contents[0x0061] = 0x00
 contents[0x0062] = 0x00
 contents[0x0063] = 0x00
 
-# st_info
+# st_info = ELF64_ST_INFO(STB_LOCAL, STT_NOTYPE)
 contents[0x0064] = 0x00
 
-# st_other
+# st_other = STV_DEFAULT
 contents[0x0065] = 0x00
 
-# st_shndx
+# st_shndx = STN_UNDEF
 contents[0x0066] = 0x00
 contents[0x0067] = 0x00
 
@@ -223,21 +221,19 @@ contents[0x0077] = 0x00
 
 # ========================
 
-# swapcase
-
-# st_name
+# st_name = swapcase
 contents[0x0078] = 0x01
 contents[0x0079] = 0x00
 contents[0x007a] = 0x00
 contents[0x007b] = 0x00
 
-# st_info
+# st_info = ELF64_ST_INFO(STB_GLOBAL, STT_FUNC)
 contents[0x007c] = 0x12
 
-# st_other
+# st_other = STV_DEFAULT
 contents[0x007d] = 0x00
 
-# st_shndx
+# st_shndx = .text
 contents[0x007e] = 0x01
 contents[0x007f] = 0x00
 
@@ -324,15 +320,13 @@ contents[0x00ba] = 0x00
 
 # >>>>>>>>>> SECTION HEADER TABLE <<<<<<<<<<
 
-# Null
-
 # sh_name
 contents[0x00c0] = 0x00
 contents[0x00c1] = 0x00
 contents[0x00c2] = 0x00
 contents[0x00c3] = 0x00
 
-# sh_type
+# sh_type = SHT_NULL
 contents[0x00c4] = 0x00
 contents[0x00c5] = 0x00
 contents[0x00c6] = 0x00
@@ -412,21 +406,19 @@ contents[0x00ff] = 0x00
 
 # ========================
 
-# .text
-
-# sh_name
+# sh_name = .text
 contents[0x0100] = 0x01
 contents[0x0101] = 0x00
 contents[0x0102] = 0x00
 contents[0x0103] = 0x00
 
-# sh_type
+# sh_type = SHT_PROGBITS
 contents[0x0104] = 0x01
 contents[0x0105] = 0x00
 contents[0x0106] = 0x00
 contents[0x0107] = 0x00
 
-# sh_flags
+# sh_flags = SHF_EXECINSTR | SHF_ALLOC
 contents[0x0108] = 0x06
 contents[0x0109] = 0x00
 contents[0x010a] = 0x00
@@ -508,7 +500,7 @@ contents[0x0141] = 0x00
 contents[0x0142] = 0x00
 contents[0x0143] = 0x00
 
-# sh_type
+# sh_type = SHT_SYMTAB
 contents[0x0144] = 0x02
 contents[0x0145] = 0x00
 contents[0x0146] = 0x00
@@ -554,7 +546,7 @@ contents[0x0165] = 0x00
 contents[0x0166] = 0x00
 contents[0x0167] = 0x00
 
-# sh_link
+# sh_link = .strtab
 contents[0x0168] = 0x03
 contents[0x0169] = 0x00
 contents[0x016a] = 0x00
@@ -588,15 +580,13 @@ contents[0x017f] = 0x00
 
 # ========================
 
-# .strtab
-
-# sh_name
+# sh_name = .strtab
 contents[0x0180] = 0x0f
 contents[0x0181] = 0x00
 contents[0x0182] = 0x00
 contents[0x0183] = 0x00
 
-# sh_type
+# sh_type = SHT_STRTAB
 contents[0x0184] = 0x03
 contents[0x0185] = 0x00
 contents[0x0186] = 0x00
@@ -676,15 +666,13 @@ contents[0x01bf] = 0x00
 
 # ========================
 
-# .shstrtab
-
-# sh_name
+# sh_name = .shstrtab
 contents[0x01c0] = 0x17
 contents[0x01c1] = 0x00
 contents[0x01c2] = 0x00
 contents[0x01c3] = 0x00
 
-# sh_type
+# sh_type = SHT_STRTAB
 contents[0x01c4] = 0x03
 contents[0x01c5] = 0x00
 contents[0x01c6] = 0x00

@@ -1,26 +1,23 @@
-import os
-
-
 contents = bytearray(0x5a)
 
 # >>>>>>>> ELF HEADER <<<<<<<<
 
-# e_ident[EI_MAG0..EI_MAG3]
+# e_ident[EI_MAG0..EI_MAG3] = ELFMAG
 contents[0x00] = 0x7f
 contents[0x01] = 0x45
 contents[0x02] = 0x4c
 contents[0x03] = 0x46
 
-# e_ident[EI_CLASS]
+# e_ident[EI_CLASS] = ELFCLASS32
 contents[0x04] = 0x01
 
-# e_ident[EI_DATA]
+# e_ident[EI_DATA] = ELFDATA2LSB
 contents[0x05] = 0x01
 
-# e_ident[EI_VERSION]
+# e_ident[EI_VERSION] = EV_CURRENT
 contents[0x06] = 0x01
 
-# e_ident[EI_OSABI]
+# e_ident[EI_OSABI] = ELFOSABI_NONE
 contents[0x07] = 0x00
 
 # e_ident[EI_ABIVERSION]
@@ -35,15 +32,15 @@ contents[0x0d] = 0x00
 contents[0x0e] = 0x00
 contents[0x0f] = 0x00
 
-# e_type
+# e_type = ET_EXEC
 contents[0x10] = 0x02
 contents[0x11] = 0x00
 
-# e_machine
+# e_machine = EM_386
 contents[0x12] = 0x03
 contents[0x13] = 0x00
 
-# e_version
+# e_version = EV_CURRENT
 contents[0x14] = 0x01
 contents[0x15] = 0x00
 contents[0x16] = 0x00
@@ -99,7 +96,7 @@ contents[0x33] = 0x00
 
 # >>>>>>>> PROGRAM HEADER TABLE <<<<<<<<
 
-# p_type
+# p_type = PT_LOAD
 contents[0x34] = 0x01
 contents[0x35] = 0x00
 contents[0x36] = 0x00
@@ -135,7 +132,7 @@ contents[0x49] = 0x00
 contents[0x4a] = 0x00
 contents[0x4b] = 0x00
 
-# p_flags
+# p_flags = PF_R | PF_X
 contents[0x4c] = 0x05
 contents[0x4d] = 0x00
 contents[0x4e] = 0x00
@@ -163,5 +160,3 @@ contents[0x59] = 0x80
 
 with open("bin/exec-tiny", "wb") as file:
     file.write(contents)
-
-os.system("chmod +x bin/exec-tiny")
