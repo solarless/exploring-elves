@@ -3,10 +3,6 @@
 I was curious about what exactly our executables contain and why it is not just
 an executable code itself, but complex, well designed format.
 
-I think explaining every single line in my code with comments would be rather
-distracting than useful. You can just look at raw bytes and not to dive into
-details, but if you want to, you can always read the specification.
-
 Each python script creates an ELF object byte-by-byte, either executable or
 relocatable. To build relocatable objects at once you can use `build-rel.sh`
 script.
