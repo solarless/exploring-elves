@@ -32,3 +32,5 @@ again.
 
   - System V ABI (common): https://www.sco.com/developers/gabi/latest/contents.html
   - System V ABI (x86-64 specific): https://www.uclibc.org/docs/psABI-x86_64.pdf
+
+There is also a copy of these resources.
